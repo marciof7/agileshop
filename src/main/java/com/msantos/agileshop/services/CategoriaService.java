@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.msantos.agileshop.domain.Categoria;
+import com.msantos.agileshop.dto.CategoriaDTO;
 import com.msantos.agileshop.exceptions.DataIntegrityException;
 import com.msantos.agileshop.exceptions.ObjectNotFoundException;
 import com.msantos.agileshop.repositories.CategoriaRepository;
@@ -58,4 +59,7 @@ public class CategoriaService {
 		
 	}
 	
+	public Categoria fromDTO(CategoriaDTO objDTO) {
+		return new Categoria(objDTO.getId(), objDTO.getNome());
+	}
 }
